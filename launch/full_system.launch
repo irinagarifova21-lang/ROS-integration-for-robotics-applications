@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Load configuration files -->
+  <rosparam file="$(find ai_navigation_opencv)/config/robot_params.yaml" />
+  <rosparam file="$(find ai_navigation_opencv)/config/navigation_params.yaml" />
+
+  <!-- Vision Node -->
+  <node name="vision_node" pkg="ai_navigation_opencv" type="vision_node.py" output="screen">
+    <param name="camera_topic" value="/camera/image_raw" />
+    <param name="model_path" value="yolov8m.pt" />
+    <param name="conf_threshold" value="0.5" />
+    <param name="publish_visualization" value="true" />
+  </node>
+
+  <!-- Navigation Node -->
+  <node name="navigation_node" pkg="ai_navigation_opencv" type="navigation_node.py" output="screen">
+    <param name="algorithm" value="a_star" />
+  </node>
+
+  <!-- Controller Node -->
+  <node name="controller_node" pkg="ai_navigation_opencv" type="controller_node.py" output="screen">
+    <param name="max_linear_vel" value="0.5" />
+    <param name="max_angular_vel" value="1.0" />
+    <param name="control_rate" value="10.0" />
+  </node>
+
+</launch>

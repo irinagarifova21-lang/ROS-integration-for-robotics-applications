@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ai_navigation_opencv</name>
+  <version>1.0.0</version>
+  <description>
+    AI-based autonomous navigation system with OpenCV and ROS integration for robotics applications.
+    Combines real-time computer vision, path planning, and SLAM for intelligent robot navigation.
+  </description>
+
+  <maintainer email="irinagarifova21@example.com">Irina Garifova</maintainer>
+  <license>MIT</license>
+
+  <author email="irinagarifova21@example.com">Irina Garifova</author>
+
+  <url type="website">https://github.com/irinagarifova21-lang/ROS-integration-for-robotics-applications</url>
+  <url type="repository">https://github.com/irinagarifova21-lang/ROS-integration-for-robotics-applications.git</url>
+  <url type="bugtracker">https://github.com/irinagarifova21-lang/ROS-integration-for-robotics-applications/issues</url>
+
+  <!-- ROS Core Dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_python_setup</buildtool_depend>
+
+  <!-- Core ROS Package Dependencies -->
+  <build_depend>rospy</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+
+  <!-- Vision Dependencies -->
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>image_transport</build_depend>
+
+  <!-- Transform Dependencies -->
+  <build_depend>tf</build_depend>
+  <build_depend>tf_conversions</build_depend>
+  <build_depend>tf2</build_depend>
+
+  <!-- Runtime Dependencies -->
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>actionlib_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>image_transport</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>tf_conversions</exec_depend>
+  <exec_depend>tf2</exec_depend>
+
+  <!-- Simulation and Testing -->
+  <test_depend>rostest</test_depend>
+  <test_depend>rosunit</test_depend>
+
+  <!-- Optional Dependencies for Extended Functionality -->
+  <build_depend>move_base</build_depend>
+  <build_depend>move_base_msgs</build_depend>
+  <build_depend>costmap_2d</build_depend>
+  <build_depend>navfn</build_depend>
+  <build_depend>base_local_planner</build_depend>
+
+  <exec_depend>move_base</exec_depend>
+  <exec_depend>move_base_msgs</exec_depend>
+  <exec_depend>costmap_2d</exec_depend>
+  <exec_depend>navfn</exec_depend>
+  <exec_depend>base_local_planner</exec_depend>
+
+  <!-- Gazebo Simulation -->
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+
+</package>

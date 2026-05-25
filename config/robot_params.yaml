@@ -1,0 +1,47 @@
+# Robot Parameters Configuration
+
+# Robot Physical Parameters
+robot:
+  name: "robot"
+  type: "differential_drive"
+  
+  # Dimensions (meters)
+  length: 0.5
+  width: 0.45
+  height: 0.3
+  
+  # Wheel Parameters
+  wheel_radius: 0.05
+  wheel_separation: 0.4
+  max_wheel_speed: 2.0  # rad/s
+  
+  # Speed Limits
+  max_linear_velocity: 0.5  # m/s
+  max_angular_velocity: 1.0  # rad/s
+  max_linear_acceleration: 0.2  # m/s^2
+  max_angular_acceleration: 0.5  # rad/s^2
+
+# Sensors
+sensors:
+  camera:
+    enabled: true
+    topic: "/camera/image_raw"
+    fps: 30
+    resolution: [1280, 720]
+    
+  lidar:
+    enabled: false
+    topic: "/scan"
+    max_range: 10.0
+    min_range: 0.1
+
+# Motor Control Parameters
+motor_control:
+  control_rate: 10.0  # Hz
+  pid:
+    linear_kp: 0.5
+    linear_ki: 0.1
+    linear_kd: 0.05
+    angular_kp: 1.0
+    angular_ki: 0.2
+    angular_kd: 0.1

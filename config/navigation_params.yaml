@@ -1,0 +1,51 @@
+# Navigation Parameters Configuration
+
+# Path Planning
+path_planning:
+  algorithm: "a_star"  # a_star, rrt, rrt_star, dijkstra
+  grid_size: [100, 100]  # cells
+  cell_size: 0.1  # meters
+  planning_timeout: 5.0  # seconds
+  allow_diagonal: true
+
+# Obstacle Avoidance
+obstacle_avoidance:
+  method: "dwa"  # dwa, apf, teb
+  enabled: true
+  
+  # Dynamic Window Approach
+  dwa:
+    max_linear_vel: 0.5
+    max_angular_vel: 1.0
+    vx_samples: 10
+    vy_samples: 5
+    vth_samples: 20
+    
+    # Costs
+    path_cost: 1.0
+    obstacle_cost: 1.0
+    velocity_cost: 0.1
+    
+    # Prediction
+    time_horizon: 3.0
+    sim_time_step: 0.1
+
+# Localization
+localization:
+  method: "slam"  # slam, particle_filter, extended_kalman
+  update_rate: 10.0  # Hz
+  
+  # Initial Pose
+  initial_pose:
+    x: 0.0
+    y: 0.0
+    theta: 0.0
+
+# Mapping
+mapping:
+  enabled: true
+  update_rate: 5.0  # Hz
+  occupancy_grid:
+    width: 100  # cells
+    height: 100  # cells
+    resolution: 0.1  # meters/cell
